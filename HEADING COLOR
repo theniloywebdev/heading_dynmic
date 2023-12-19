@@ -1,0 +1,17 @@
+SINGLE HEADING COLOR
+const Heading = ({text}) => {
+   let amin = text.replace ("#","<span class='one'>").replace("#","</span>");
+  return <h1 dangerouslySetInnerHTML={{__html: amin}}></h1>;
+  
+};
+
+
+MULTIPLE HEADING COLOR
+
+const Heading = ({text}) => {
+  let pattern = /#([^#]+)#/g;
+  let textWithSpan = text.replace(pattern,"<span class='one'>$1</span>");
+  return <h1 dangerouslySetInnerHTML={{__html: textWithSpan}}></h1>
+   
+  
+}
